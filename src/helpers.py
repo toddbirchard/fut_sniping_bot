@@ -7,6 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def wait_for_shield_invisibility(driver, duration=0.25):
     WebDriverWait(driver, 10).until(
-        EC.invisibility_of_element_located((By.CLASS_NAME, 'ut-click-shield showing interaction'))
+        EC.invisibility_of_element_located(
+            (By.CLASS_NAME, "ut-click-shield showing interaction")
+        )
     )
     sleep(duration)

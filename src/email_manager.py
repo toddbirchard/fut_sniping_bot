@@ -2,7 +2,7 @@ import email
 import imaplib
 import sys
 
-from src.config import EMAIL_CREDENTIALS, EA_EMAIL
+from config import EMAIL_CREDENTIALS, EA_EMAIL
 
 
 def get_access_code():
@@ -25,13 +25,13 @@ def get_access_code():
         message_numbers_list = message_numbers[0].split()
 
     message_number = message_numbers[0].split()[0]
-    _, msg = M.fetch(message_number, '(RFC822)')
-    raw_email = msg[0][1].decode('utf-8')
+    _, msg = M.fetch(message_number, "(RFC822)")
+    raw_email = msg[0][1].decode("utf-8")
 
     email_message = email.message_from_string(raw_email)
 
-    print(email_message['Subject'])
+    print(email_message["Subject"])
 
-    access_code = ''.join(filter(str.isdigit, email_message['Subject']))
+    access_code = "".join(filter(str.isdigit, email_message["Subject"]))
 
     return access_code

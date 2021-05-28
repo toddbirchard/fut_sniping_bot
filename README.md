@@ -26,7 +26,7 @@ The current status is described in the console logs, so you have real-time acces
 ## Installation
 
 ```
-pip install -r requirements.txt
+make install
 ```
 
 ## Configuration
